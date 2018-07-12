@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>
+      Devices
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ul>
+    <li *ngFor="let device of devices">
+      <device-card [device]="device" (click)="openDeviceDetail(device)"></device-card>
+    </li>
+  </ul>
+</ion-content>

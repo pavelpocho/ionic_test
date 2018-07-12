@@ -1,0 +1,221 @@
+page-device-detail {
+    .tab-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #f8f8f8;
+    }
+    .slider {
+        height: 2px;
+        width: 33.33333%;
+        background-color: black;
+        transition: all .2s;
+    }
+    .tab-buttonx {
+        width: 33.33333%;
+        border: none;
+        padding: 0px;
+        display: block;
+        height: 56px;
+        background-color: #f8f8f8;
+        font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .content-wrap {
+        display: flex;
+    }
+    .content-page {
+        transition: all .2s;
+        transform: translateY(20px);
+        opacity: 0;
+        width: 100%;
+        position: relative;
+
+        .name {
+            color: #303030;
+            font-weight: bold;
+            font-size: 32px;
+            margin-top: 8px;
+            margin-left: 16px;
+            margin-bottom: 16px;
+        }
+
+        .battery-and-temp {
+            margin-left: 16px;
+
+            .battery-wrap, .temp-wrap {
+                display: flex;
+                margin-bottom: 12px;
+
+                ion-icon {
+                    font-size: 26px;
+                    color: #707070;
+                }
+
+                p {
+                    line-height: 26px;
+                    font-size: 18px;
+                    color: #707070;
+                    margin: 0px 8px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .status-up {
+            position: absolute;
+            top: 72px;
+            right: 16px;
+            border: 3px solid darkgreen;
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+        }
+        .status-down {
+            position: absolute;
+            top: 72px;
+            right: 16px;
+            border: 3px solid darkgreen;
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+        }
+        .status-no-change {
+            position: absolute;
+            top: 72px;
+            right: 16px;
+            border: 3px solid blue;
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+        }
+        .status-alert {
+            position: absolute;
+            top: 72px;
+            right: 16px;
+            border: 3px solid red;
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+        }
+        .state-icon {
+            line-height: 94px;
+            width: 94px;
+            text-align: center;
+            font-size: 44px;
+        }
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+        .green {
+            color: darkgreen;
+        }
+
+        .separator {
+            height: 1px;
+            width: 100%;
+            margin: 16px auto;
+            background-color: #cacaca;
+        }
+    }
+}
+
+.notif-list {
+    padding: 0px;
+    list-style-type: none;
+}
+.sort-by {
+    display: flex;
+    justify-content: start;
+    color: #404040;
+    p {
+        margin-top: 13px;
+    }
+}
+
+.range-green {
+    font-size: 60px;
+    text-align: center;
+    font-weight: 500;
+    color: darkgreen;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.range-red {
+    font-size: 60px;
+    text-align: center;
+    font-weight: 500;
+    color: red;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.range-blue {
+    font-size: 60px;
+    text-align: center;
+    font-weight: 500;
+    color: blue;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.prev-range {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.min-max-range {
+
+}
+.min-range {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: right;
+    span {
+        font-weight: bold;
+        font-size: 14px;
+        color: #505050;
+        float: left;
+    }
+}
+.max-range {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: right;
+    span {
+        font-weight: bold;
+        font-size: 14px;
+        color: #505050;
+        float: left;
+    }
+}
+.history-wrap {
+    display: flex;
+    justify-content: space-evenly;
+}
+.no-activity {
+    font-weight: bold;
+    color: #707070;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+.toggle-wrap {
+    padding: 0px;
+    margin-bottom: 16px;
+    .input-wrapper {
+        margin-left: 16px;
+    }
+    .toggle-button {
+        margin-right: 16px;
+    }
+}
+
+.importance-title {
+    font-weight: bold;
+    color: #808080;
+}

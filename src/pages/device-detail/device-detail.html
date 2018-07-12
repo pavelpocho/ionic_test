@@ -1,0 +1,85 @@
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>{{device.name}}</ion-title>
+	</ion-navbar>
+	<div class="tab-wrap">
+		<button class="tab-buttonx selected" (click)="switchTab(0)">Details</button>
+		<button class="tab-buttonx" (click)="switchTab(1)">Alarms</button>
+		<button class="tab-buttonx" (click)="switchTab(2)">History</button>
+		<div class="slider"></div>
+	</div>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="content-wrap">
+		<div class="content-page" *ngIf="currentContent == 0">
+			<ion-item class="toggle-wrap">
+					<ion-toggle class="toggle-label" checked="true"></ion-toggle>
+					<ion-label class="toggle-button">Toggle device on/off</ion-label>
+			</ion-item>
+			<p class="name">{{device.name}}</p>
+			<div class="battery-and-temp">
+				<div class="battery-wrap">
+					<ion-icon name="battery-full"></ion-icon>
+					<p class="battery">{{device.battery}} mV</p>
+				</div>
+				<div class="temp-wrap">
+					<ion-icon name="thermometer"></ion-icon>
+					<p class="temp">{{device.temperature}} °C</p>
+				</div>
+			</div>
+			<div [class]="statusClass">
+					<ion-icon *ngIf="statusClass == 'status-up'" name="arrow-round-up" class="state-icon green"></ion-icon>
+					<ion-icon *ngIf="statusClass == 'status-down'" name="arrow-round-down" class="state-icon green"></ion-icon>
+					<ion-icon *ngIf="statusClass == 'status-no-change'" name="checkmark" class="state-icon blue"></ion-icon>
+					<ion-icon *ngIf="statusClass == 'status-alert'" name="alert" class="state-icon red"></ion-icon>
+			</div>
+			<div class="separator"></div>
+			<div class="range-and-time">
+					<p [class]="rangeColorClass">{{device.detectedRange}} cm</p>
+					<p class="prev-range">{{prevRangeText}}</p>
+					<div class="min-max-range">
+						<p class="min-range"><span>Min. range</span> {{device.minRange}} cm</p>
+						<p class="max-range"><span>Max. range</span> {{device.maxRange}} cm</p>
+					</div>
+			</div>
+		</div>
+		<div class="content-page" *ngIf="currentContent == 1">
+      <div class="sort-by">
+        <p>Sort by:</p>
+        <ion-select>
+          <ion-option (ionSelect)="changeSorting(0)" [selected]="sortOption === 0">Time</ion-option>
+          <ion-option (ionSelect)="changeSorting(1)" [selected]="sortOption === 1">Importance</ion-option>
+        </ion-select>
+			</div>
+			<div *ngIf="notifications.length === 0">
+				<p class="no-activity">No recent device activity</p>
+			</div>
+			<ion-card *ngIf="notifications.length !== 0 && sortOption === 0">
+        <ion-list>
+          <ion-item *ngFor="let notif of notifications"><ultra-notification [notification]="notif"></ultra-notification></ion-item>
+        </ion-list>
+			</ion-card>
+			<div class="importance-sort-wrap" *ngIf="notifications.length !== 0 && sortOption === 1">
+				<p class="importance-title" *ngIf="highImportanceNotifs.length > 0">High importance</p>
+				<ion-card>
+					<ion-list>
+						<ion-item *ngFor="let notif of highImportanceNotifs"><ultra-notification [notification]="notif"></ultra-notification></ion-item>
+					</ion-list>
+				</ion-card>
+				<p class="importance-title" *ngIf="normalImportanceNotifs.length > 0">Normal importance</p>
+				<ion-card>
+					<ion-list>
+						<ion-item *ngFor="let notif of normalImportanceNotifs"><ultra-notification [notification]="notif"></ultra-notification></ion-item>
+					</ion-list>
+				</ion-card>
+			</div>
+		</div>
+		<div class="content-page history-wrap" *ngIf="currentContent == 2">
+			<canvas id="historyGraph"></canvas>
+		</div>
+	</div>
+</ion-content>

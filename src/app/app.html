@@ -1,0 +1,11 @@
+<ion-menu [content]="mycontent">
+    <ion-content>
+        <ion-list>
+            <button ion-item>Notifications</button>
+            <button ion-item>Settings</button>
+            <button ion-item>Sign out</button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

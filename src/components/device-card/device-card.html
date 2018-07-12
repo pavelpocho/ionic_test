@@ -1,0 +1,11 @@
+<ion-card>
+	<div [class]="stateImageClass">
+		<ion-icon *ngIf="stateImageClass == 'state-img-up'" name="arrow-round-up" class="state-icon green"></ion-icon>
+		<ion-icon *ngIf="stateImageClass == 'state-img-down'" name="arrow-round-down" class="state-icon green"></ion-icon>
+		<ion-icon *ngIf="stateImageClass == 'state-img-no-change'" name="checkmark" class="state-icon blue"></ion-icon>
+		<ion-icon *ngIf="stateImageClass == 'state-img-alert'" name="alert" class="state-icon red"></ion-icon>
+	</div>
+	<p class="name">{{device.name}}</p>
+	<p class="update-time">{{displayTime}}</p>
+	<p class="distance">{{device.detectedRange}} cm</p>
+</ion-card>

@@ -1,0 +1,69 @@
+device-card {
+    ion-card {
+        padding: 12px;
+    }
+    .name {
+        font-weight: 500;
+        float: left;
+        font-size: 16px;
+        color: #606060;
+        margin-left: 12px;
+        line-height: 46px;
+    }
+    .state-img-up {
+        height: 46px;
+        width: 46px;
+        border: 3px solid darkgreen;
+        border-radius: 100%;
+        float: left;
+    }
+    .state-img-down {
+        height: 46px;
+        width: 46px;
+        border: 3px solid darkgreen;
+        border-radius: 100%;
+        float: left;
+    }
+    .state-img-no-change {
+        height: 46px;
+        width: 46px;
+        border: 3px solid blue;
+        border-radius: 100%;
+        float: left;
+    }
+    .state-img-alert {
+        height: 46px;
+        width: 46px;
+        border: 3px solid red;
+        border-radius: 100%;
+        float: left;
+    }
+    .state-icon {
+        line-height: 40px;
+        width: 40px;
+        text-align: center;
+        font-size: 22px;
+    }
+    .red {
+        color: red;
+    }
+    .blue {
+        color: blue;
+    }
+    .green {
+        color: darkgreen;
+    }
+    .distance {
+        float: right;
+        margin-top: 3px;
+        line-height: 40px;
+        margin-right: 8px;
+        padding-right: 8px;
+        border-right: 1px solid #a1a1a1;
+        font-weight: bold;
+    }
+    .update-time {
+        float: right;
+        line-height: 46px;
+    }
+}

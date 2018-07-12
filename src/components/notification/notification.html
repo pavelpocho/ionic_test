@@ -1,0 +1,7 @@
+<!-- Generated template for the NotificationComponent component -->
+<div class="notif-wrap">
+	<ion-icon name="alert" class="notif-icon" *ngIf="!iconIsImportant"></ion-icon>
+	<ion-icon name="alert" class="notif-icon-important" *ngIf="iconIsImportant"></ion-icon>
+	<p class="notif-title">{{notification.title}}<br/><span>{{notification.description}}</span></p>
+	<p class="notif-date">{{notification.time.toLocaleTimeString()}}</p>
+</div>
